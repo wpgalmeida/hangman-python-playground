@@ -28,13 +28,13 @@ class Words(StandardModelMixin):
     category = models.ForeignKey(Categories, on_delete=models.CASCADE)
 
 
-class Move(StandardModelMixin):
-    player = models.ForeignKey(Player, on_delete=models.CASCADE)
-    letter = models.CharField(max_length=1, blank=False)
-    right = models.BooleanField(default=False)
-
-
 class Game(StandardModelMixin):
     word = models.ForeignKey(Words, on_delete=models.CASCADE)
-    move = models.ForeignKey(Move, on_delete=models.CASCADE, null=True)
     end_game = models.BooleanField(default=False)
+
+
+class Move(StandardModelMixin):
+    player = models.ForeignKey(Player, on_delete=models.CASCADE)
+    game = models.ForeignKey(Game, on_delete=models.CASCADE)
+    letter = models.CharField(max_length=1, blank=False)
+    right = models.BooleanField(default=False)
