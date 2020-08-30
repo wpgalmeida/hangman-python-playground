@@ -12,8 +12,8 @@ As palavras para serem adivinhadas devem ser cadastradas no jogo, separadas por 
 jogo deve escolher qual categoria quer jogar e um das palavras cadastradas será sorteada aleatóriamente para ser 
 adivinhada. 
 
-O jogo termina quando o jogador adivinha a palavra ou atingi o numero de 6 erros, o que acontecer primeiro. 
-teste
+O jogo termina quando o jogador adivinhar a palavra ou atingir o numero de 6 erros, o que acontecer primeiro. 
+
 
 
 
