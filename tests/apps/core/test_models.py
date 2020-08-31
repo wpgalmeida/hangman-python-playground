@@ -141,7 +141,7 @@ class Test(TestCase):
         self.assertEqual(move_created.player, player_created)
         self.assertEqual(move_created.game, game_created)
         self.assertEqual(move_created.letter, "a")
-        self.assertFalse(move_created.right)
+        self.assertEqual(move_created.ritted_pos, "")
 
     def test_should_not_null_constraint_give_move_without_letter(self):
         player_created = Player.objects.create(
