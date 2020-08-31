@@ -37,4 +37,4 @@ class Move(StandardModelMixin):
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
     letter = models.CharField(max_length=1, blank=False)
-    right = models.BooleanField(default=False)
+    ritted_pos = models.CharField(max_length=100)
