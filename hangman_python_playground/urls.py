@@ -20,7 +20,7 @@ from rest_framework import routers
 from hangman_python_playground.apps.core.drf import views
 
 router = routers.DefaultRouter()
-router.register(r"player", views.PlayerSerializer)
+router.register(r"player", views.PlayerViewSet)
 router.register(r"categories", views.CategoriesViewSet)
 router.register(r"words", views.WordsViewSet)
 router.register(r"game", views.GameViewSet)
@@ -28,5 +28,5 @@ router.register(r"move", views.MoveViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path(path("api/v1/", include(router.urls)),),
+    path("api/v1/", include(router.urls)),
 ]

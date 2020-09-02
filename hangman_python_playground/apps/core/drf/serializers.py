@@ -1,61 +1,33 @@
-from rest_framework import viewsets
+from rest_framework import serializers
 
-from hangman_python_playground.apps.core.drf.serializers import (
-    PlayerSerializer,
-    CategoriesSerializer,
-    WordsSerializer,
-    GameSerializer,
-    MoveSerializer,
-)
-from hangman_python_playground.apps.core.models import (
-    Player,
-    Categories,
-    Words,
-    Game,
-    Move,
-)
+from hangman_python_playground.apps.core.models import Categories, Player, Words, Game
 
 
-class PlayerViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
-
-    queryset = Player.objects.all()
-    serializer_class = PlayerSerializer
+class PlayerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Player
+        fields = "__all__"
 
 
-class CategoriesViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
-
-    queryset = Categories.objects.all()
-    serializer_class = CategoriesSerializer
+class CategoriesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Categories
+        fields = "__all__"
 
 
-class WordsViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
-
-    queryset = Words.objects.all()
-    serializer_class = WordsSerializer
+class WordsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Words
+        fields = "__all__"
 
 
-class GameViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
-
-    queryset = Game.objects.all()
-    serializer_class = GameSerializer
+class GameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Game
+        fields = "__all__"
 
 
-class MoveViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
-
-    queryset = Move.objects.all()
-    serializer_class = MoveSerializer
+class MoveSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Game
+        fields = "__all__"
