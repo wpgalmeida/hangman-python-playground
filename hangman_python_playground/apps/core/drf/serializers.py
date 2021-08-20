@@ -1,6 +1,12 @@
 from rest_framework import serializers
 
-from hangman_python_playground.apps.core.models import Categories, Player, Words, Game
+from hangman_python_playground.apps.core.models import (
+    Categories,
+    Player,
+    Words,
+    Game,
+    Move,
+)
 
 
 class PlayerSerializer(serializers.ModelSerializer):
@@ -29,5 +35,5 @@ class GameSerializer(serializers.ModelSerializer):
 
 class MoveSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Game
+        model = Move
         fields = "__all__"
